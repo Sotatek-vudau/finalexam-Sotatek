@@ -63,18 +63,18 @@ export class UserSevice{
         return newUser;
     }
 
-    async createProfile(
-      userId: number,
-      data: UpdateUserDto,
-    ): Promise<UserEntity> {
-      const isExist = await this.checkUserExisted(userId);
-      if (!isExist) {
-        throw new NotFoundException('User not found');
-      }
-      await this.userRepository.update(userId, data);
+    // async createProfile(
+    //   userId: number,
+    //   data: UpdateUserDto,
+    // ): Promise<UserEntity> {
+    //   const isExist = await this.checkUserExisted(userId);
+    //   if (!isExist) {
+    //     throw new NotFoundException('User not found');
+    //   }
+    //   await this.userRepository.update(userId, data);
   
-      return await this.userRepository.findUserById(userId);
-    }
+    //   return await this.userRepository.findUserById(userId);
+    // }
 
     async updateProfile(
       userId: number,

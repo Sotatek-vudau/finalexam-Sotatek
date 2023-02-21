@@ -16,7 +16,7 @@ function CreateProfile() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
-    await axiosInstance.put("user/create", {
+    await axiosInstance.put("user/update", {
       "username": userName,
       "bio": bio,
       "location": location

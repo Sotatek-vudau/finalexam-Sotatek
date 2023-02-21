@@ -11,16 +11,16 @@ export class UserController{
         private readonly userService: UserSevice,
       ) {}
 
-    @UseGuards(JwtAuthGuard)
-    @Put("create")
-    async CreateProfile(
-    @GetUser('id') userId: number,
-    @Body() updateUserDto: UpdateUserDto
-    ): Promise<ResponseDto<UserEntity>> {
-    return {
-      data: await this.userService.createProfile(userId, updateUserDto),
-    };
-    }
+    // @UseGuards(JwtAuthGuard)
+    // @Put("create")
+    // async CreateProfile(
+    // @GetUser('id') userId: number,
+    // @Body() updateUserDto: UpdateUserDto
+    // ): Promise<ResponseDto<UserEntity>> {
+    // return {
+    //   data: await this.userService.createProfile(userId, updateUserDto),
+    // };
+    // }
 
     @UseGuards(JwtAuthGuard)
     @Put("update")
